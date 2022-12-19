@@ -71,23 +71,16 @@ Data and Code are available at our <a href="https://vossanto.weltliteratur.net/"
 - a trope, closely related to metaphor and metonymy
 - special case of general antonomasia
 - attributing a particular property to an entity by naming another named entity, that is typically well-known for the respective property
-<!-- - typically consists of three parts: -->
-
-<!-- <span class="vasource">Source</span> → <span
-  class="vamodifier">Modifier</span> → <span
-  class="vatarget">Target</span> (vgl. [Bergien 2013](http://onomasticafelecan.ro/iconn2/proceedings/1_01_Bergien_Angelika_ICONN_2.pdf)) -->
-<!-- - Abbreviation: **Vossanto** -->
 
 
-<!-- - Example: <span class="vatarget"></span>, der <span
-  class="vasource"></span> des <span
-  class="vamodifier">Computerzeitalters</span> -->
+
 
 ![VA Example](images/example.png)
 <!-- .element width="450px" -->
 
+
 <small>
-Bildquellen: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a></small>
+image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a></small>
 
 
 --
@@ -339,8 +332,8 @@ Bildquellen: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a><
 
 - Annotation Process: IOB-Tagging
 - NYT-0: Schwab et al. ([2019](https://doi.org/10.18653/v1/D19-1647), [2022](https://doi.org/10.3389/frai.2022.868249))
-- UMBL manually curated list from Frank Fischer
-- ZEIT: semi-automated collected VA collections (Jäschke et al. 2017)
+- UMBL: [manually curated list](https://umblaetterer.de/datenzentrum/vossianische-antonomasien.html)
+- ZEIT: semi-automated collected VA collections ([Jäschke et al. 2017](https://zenodo.org/record/4646126#.Y6AzIafMLJU))
 - NEG-1/2/3: negative samples (syntactically similar, semantically similar, random)
 
 --
