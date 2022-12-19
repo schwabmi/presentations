@@ -331,10 +331,10 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 <br />
 
 - Annotation Process: IOB-Tagging
-- NYT-0: Schwab et al. ([2019](https://doi.org/10.18653/v1/D19-1647), [2022](https://doi.org/10.3389/frai.2022.868249))
-- UMBL: [manually curated list](https://umblaetterer.de/datenzentrum/vossianische-antonomasien.html)
-- ZEIT: semi-automated collected VA collections ([Jäschke et al. 2017](https://zenodo.org/record/4646126#.Y6AzIafMLJU))
-- NEG-1/2/3: negative samples (syntactically similar, semantically similar, random)
+- NYT-0: semi-automated creation, English (Schwab et al. ([2019](https://doi.org/10.18653/v1/D19-1647), [2022](https://doi.org/10.3389/frai.2022.868249)))
+- [UMBL](https://umblaetterer.de/datenzentrum/vossianische-antonomasien.html): manual creation, German
+- ZEIT: semi-automated creation, German ([Jäschke et al. 2017](https://zenodo.org/record/4646126#.Y6AzIafMLJU))
+- NEG-1/2/3: semi-automated creation, German (syntactically similar, semantically similar, random)
 
 --
 
