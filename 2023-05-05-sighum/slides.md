@@ -231,19 +231,17 @@ https://vossanto.weltliteratur.net/timeline/
 
 ## Baselines: Coreference Resolution (COREF)
 
-
-- Model: Longformer \todo(cite)
-
-
+#### Longformer based ZITIEREN (https://github.com/shtoshni/fast-coref)
 
 
 <br />
 
-1. VA phrase consisting of source and modifier
+1. Baseline: VA phrase as anchor
 
 
 <p style="font-size: 0.7em; font-style: italic;">It forms the underpinnings for Ms. Barolini's epic saga <span style="color: blue;">Umbertina</span> [. . .]  ''<span style="color: blue;">It</span> is <span style="color: orange;">the Madonna of Italian-American literature</span> in that <span style="color: blue;">it</span> shows the transition from the Italian immigrant to American citizen like no other book of its genre.''</p>
-2. Annotated target reference inside the sentence the VA phrase appears 
+
+2. Baseline: Target reference inside the sentence as anchor
 
 <p style="font-size: 0.7em; font-style: italic;">It forms the underpinnings for Ms. Barolini's epic saga <span style="color: blue;">Umbertina</span> [. . .]  ''<span style="color: orange;">It</span> is <span style="color: blue;">the Madonna of Italian-American literature</span> in that <span style="color: blue;">it</span> shows the transition from the Italian immigrant to American citizen like no other book of its genre.''</p>
 
@@ -257,13 +255,13 @@ https://vossanto.weltliteratur.net/timeline/
 --
 
 ## Question-Answering (QA)
+#### ELECTRA LARGE (ZITIEREN)
 
 <br>
 
 - Transform VA phrase into QA task:
     - Question: "Who is the Madonna of Italian-American literature?"
     - Context: Article text
-- Employ Language Model finetuned on QA (Electra large)
 - No need of annotated target reference in sentence
 - Independent on the syntax of VA phrases:
     - "the German Madonna" &rarr; Who is the German Madonna?
