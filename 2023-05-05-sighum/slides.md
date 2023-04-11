@@ -17,7 +17,7 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 
 ## Content
 
-<br/>
+<br>
 
 1. [Definition and Examples](#/1)
 2. [Motivation and Difficulty](#/2) 
@@ -48,7 +48,9 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 
 --
 
-### »the Michael Jordan of football«
+## »the Michael Jordan of football«
+
+<br>
 
 ![VA Example](images/example.png)
 <!-- .element width="450px" -->
@@ -78,7 +80,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 ## Vossanto Research
 
-</br>
+<br>
 
 <div class="timeline">
   <div class="container left">
@@ -157,7 +159,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 ## Interactive explorable data
 
-</br>
+<br>
 
 ![interaktive Vossanto-Timeline](images/timeline.png)<!-- .element width="70%" -->
 
@@ -168,7 +170,7 @@ https://vossanto.weltliteratur.net/timeline/
 
 ## Target Extraction and Linking
 
-</br>
+<br>
 
 - until now: Vossanto detection using sentences as input
 - Problem: Target not mentioned/only a reference mentioned
@@ -185,7 +187,7 @@ https://vossanto.weltliteratur.net/timeline/
 
 ## Vossanto Dataset (Schwab et al. (2019, 2022, 2023))
 
-</br>
+<br>
 
 <ol>
   <li>
@@ -209,14 +211,14 @@ https://vossanto.weltliteratur.net/timeline/
 </ol>
 
 
-<p style="text-align:left;"> <b>Result</b>: 6.095 sentences, <b>3.115</b> include Vossantos </p>
+<p style="text-align:left;"> <b>Result</b>: 6,095 sentences, <b>3,115</b> include Vossantos </p>
 
 
 --
 
 ## Most frequent targets
 
-</br>
+<br>
 
 ![Target Statistics](images/target_stats.png)<!-- .element width="700px" -->
 
