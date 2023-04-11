@@ -1,0 +1,229 @@
+.reveal section img {
+  border: none;
+}
+.reveal table th {
+  font-size: 0.75em; border: none;
+}
+.reveal table td {
+  font-size: 0.75em; border: none;
+}
+.reveal {
+  font-size: 30px;
+}
+.reveal h1 {
+    font-size: 2em;
+    text-align:center;
+}
+.reveal h2 {
+    font-size: 1.6em;
+    text-align:center;
+}
+.reveal h3 {
+	font-size: 1.3em;
+}
+
+
+/* -------------------- for the timeline --------------------------- */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #ffffff;
+}
+
+.timeline {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.timeline::after {
+  content: '';
+  position: absolute;
+  width: 2px;
+  background: #006E51;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -1px;
+}
+
+.container {
+  padding: 2px 30px;
+  position: relative;
+  background: inherit;
+  width: 50%;
+}
+
+.container.left {
+  left: 0;
+}
+
+.container.right {
+  left: 50%;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  top: calc(50% - 8px);
+  right: -8px;
+  background: #ffffff;
+  border: 2px solid #006E51;
+  border-radius: 16px;
+  z-index: 1;
+}
+
+/*punkte auf timeline horizontale ausrichtung */
+.container.right::after {
+  left: -8px;
+}
+
+/*stricht zu bullet points -  größe und y ausrichtung */
+.container::before {
+  content: '';
+  position: absolute;
+  width: 50px;
+  height: 1px;
+  top: calc(50% - 1px);
+  right: 8px;
+  background: #006E51;
+  z-index: 1;
+}
+
+/*stricht zu bullet points -  horizontale ausrichtung */
+.container.right::before {
+  left: 8px;
+}
+
+/* .container .date {
+    
+  position: absolute;
+  display: inline-block;
+  top: calc(50% - 8px);
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  color: #006E51;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  z-index: 1;
+}
+
+.container.left .date {
+  right: -550px;
+}
+
+.container.right .date {
+  left: -550px;
+} */
+
+
+/* bullet points größe und y-ausrichtung */
+.container .icon {
+  position: absolute;
+  display: inline-block;
+  width: 40px;
+  height: 40px;
+  padding: 5px 0;
+  top: calc(50% - 20px);
+  background: #F6D155;
+  border: 2px solid #006E51;
+  border-radius: 40px;
+  text-align: center;
+  font-size: 18px;
+  color: #006E51;
+  z-index: 1;
+}
+
+/* bp horizontal */
+.container.left .icon {
+  right: 56px;
+}
+
+/* bp horizontal */
+.container.right .icon {
+  left: 56px;
+}
+
+.container .content {
+  padding: 15px 90px 15px 30px;
+  background: #F6D155;
+  position: relative;
+  border-radius: 0 500px 500px 0;
+}
+
+.container.right .content {
+  padding: 15px 90px 15px 90px;
+  border-radius: 500px 0 0 500px;
+}
+
+.container .content h2 {
+  margin: 0 0 10px 0;
+  font-size: 18px;
+  font-weight: normal;
+  color: #006E51;
+}
+
+.container .content p {
+  margin: 0;
+  font-size: 16px;
+  line-height: 22px;
+  color: #000000;
+}
+
+@media (max-width: 767.98px) {
+  .timeline::after {
+    left: 90px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 120px;
+    padding-right: 30px;
+  }
+
+  .container.right {
+    left: 0%;
+  }
+
+  .container.left::after, 
+  .container.right::after {
+    left: 82px;
+  }
+
+  .container.left::before,
+  .container.right::before {
+    left: 100px;
+    border-color: transparent #006E51 transparent transparent;
+  }
+
+  .container.left .date,
+  .container.right .date {
+    right: auto;
+    left: 15px;
+  }
+
+  .container.left .icon,
+  .container.right .icon {
+    right: auto;
+    left: 146px;
+  }
+
+  .container.left .content,
+  .container.right .content {
+    padding: 15px 30px 15px 90px;
+    border-radius: 500px 0 0 500px;
+  }
+}
+
