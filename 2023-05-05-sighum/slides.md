@@ -43,7 +43,7 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 - a trope, closely related to metaphor and metonymy
 - special case of general antonomasia
 - attributing a particular property to an entity by naming another named entity, that is typically well-known for the respective property
-- first described around 1600 from Gerardus Vossius
+- first described around 1600 by Gerardus Vossius
 - consists of Target, Source, Modifier (cf. Bergien 2013)
 
 
