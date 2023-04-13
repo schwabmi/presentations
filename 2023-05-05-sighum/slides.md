@@ -8,7 +8,7 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 2 · Freie Universität Berlin<!-- .element: style="font-size:0.6em;" --> <br />
 3 · L3S Research Center Hannover<!-- .element: style="font-size:0.6em;" -->
 
-<br />URL of this presentation: <!-- .element: style="font-size:0.6em;" --> **[todo](todo)**  <!-- .element: style="font-size:0.6em;" -->
+<br />URL of this presentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/3UvC1JX](https://bit.ly/3UvC1JX)**  
 
 [SIGHUM2023](https://sighum.wordpress.com/events/latech-clfl-2023/) &nbsp;·&nbsp; Dubrovnik &nbsp;🇭🇷 &nbsp;·&nbsp; Fr, 05. Mai 2023
 <!-- .element: style="font-size:0.8em;" -->
@@ -20,13 +20,12 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 <br>
 
 1. [Definition and Examples](#/1)
-2. [Motivation and Difficulty](#/2) 
-3. [Task](#/3)
-4. [Data](#/4)
-5. [Methods](#/5)
-6. [Evaluation](#/6)
-7. [Findings](#/7)
-8. [Bibliography](#/8)
+2. [Task](#/2)
+3. [Data](#/3)
+4. [Methods](#/4)
+5. [Evaluation](#/5)
+6. [Findings](#/6)
+7. [Bibliography](#/7)
 
 ---
 
@@ -218,7 +217,7 @@ https://vossanto.weltliteratur.net/dhd2023/modifier.html
 <br>
 
 | target             | count |
-|--------------------|-------|
+|--------------------|------:|
 | Bill Clinton       |     8 |
 | P. T. Barnum       |     6 |
 | Michael Jordan     |     6 |
@@ -324,7 +323,7 @@ https://vossanto.weltliteratur.net/dhd2023/modifier.html
 <span style="font-size:0.9em">
 <code class="json">
 {
-Question: "Who is the Madonna of Italian-American literature?"
+Question: "Who is the Madonna of Italian-American literature?",
 <br>
 Context: [truncated] article_text
 }
@@ -332,7 +331,7 @@ Context: [truncated] article_text
 </span></p>
 
 
-<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">QA</span> &darr;</span><br>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Question-Answering</span> &darr;</span><br>
 <span style="font-style: italic;"><span style="color:green; font-weight:bold">Umbertina</span></span></p>
 
 
