@@ -43,7 +43,7 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 - special case of general antonomasia
 - attributing a particular property to an entity by naming another named entity, that is typically well-known for the respective property
 - first described around 1600 from Gerardus Vossius
-- consists of Target, Source, Modifier (vgl. Bergien 2013)
+- consists of Target, Source, Modifier (cf. Bergien 2013)
 
 
 --
@@ -229,51 +229,116 @@ https://vossanto.weltliteratur.net/timeline/
 --
 
 
-## Baselines: Coreference Resolution (COREF)
-
-#### Longformer based ZITIEREN (https://github.com/shtoshni/fast-coref)
-
+## Baselines: Coreference Resolution
 
 <br />
 
-1. Baseline: VA phrase as anchor
+#### 1. Baseline: Reference chain VA phrase
 
 
-<p style="font-size: 0.7em; font-style: italic;">It forms the underpinnings for Ms. Barolini's epic saga <span style="color: blue;">Umbertina</span> [. . .]  ''<span style="color: blue;">It</span> is <span style="color: orange;">the Madonna of Italian-American literature</span> in that <span style="color: blue;">it</span> shows the transition from the Italian immigrant to American citizen like no other book of its genre.''</p>
+<p style="font-size: 0.7em; font-style: italic;">''It is <span style="background-color: orange; font-weight:bold">the Madonna of Italian-American literature</span> in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.''</p>
 
-2. Baseline: Target reference inside the sentence as anchor
+#### 2. Baseline: Reference chain that includes target reference
 
-<p style="font-size: 0.7em; font-style: italic;">It forms the underpinnings for Ms. Barolini's epic saga <span style="color: blue;">Umbertina</span> [. . .]  ''<span style="color: orange;">It</span> is <span style="color: blue;">the Madonna of Italian-American literature</span> in that <span style="color: blue;">it</span> shows the transition from the Italian immigrant to American citizen like no other book of its genre.''</p>
+<p style="font-size: 0.7em; font-style: italic;">''<span style="background-color: orange; font-weight:bold">It</span> is the Madonna of Italian-American literature in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.''</p>
 
+<br> 
 
-<br />
-&rarr; Select first named entity in reference chain
-
-[<span style="color:green">Umbertina</span>, It, the Madonna of Italian-American literature, it]
+#### Model: Toshniwal et al. 2021 - Longformer based
 
 
 --
 
-## Question-Answering (QA)
-#### ELECTRA LARGE (ZITIEREN)
+<br />
+
+## Baselines
+
+<span style="font-style: italic;"> 
+TUCKED on a shelf inside a corner cabinet in the living room of Helen Barolini's Carpenter Gothic cottage here sits a crudely shaped tin heart with a tubular sheath for a backing.
+[. . .]
+ It forms the underpinnings for Ms. Barolini's epic saga ''Umbertina,'' [. . .] ''It is the Madonna of Italian-American literature in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.''
+[. . .] </span>
+
+&darr; <span style="font-size: 0.7em">Coreference resolution </span> &darr;
+
+<span style="font-style: italic;">[Helen Barolini, Ms. Barolini, ...], [Umbertina, It, ...], ... </span>
+
+&darr; <span style="font-size: 0.7em">Choose reference chain </span> &darr;
+
+<span style="font-style: italic;">[Umbertina, It, the Madonna of Italian-American literature, it]</span>
+
+&darr; <span style="font-size: 0.7em">NER (Akbik et al. 2018)</span> &darr;
+
+<span style="font-style: italic;">[<span style="background-color:LightGreen">Umbertina [PER]</span>, It, the <span style="background-color:LightGreen">Madonna [PER]</span> of <span style="background-color:LightGreen">Italian-American [MISC]</span> literature, it]</span>
+
+&darr; <span style="font-size: 0.7em">Select first named entity</span> &darr;
+
+<span style="font-style: italic;"><span style="color:green; font-weight:bold">Umbertina</span></span>
+
+
+
+--
+
+## Question-Answering
 
 <br>
 
-- Transform VA phrase into QA task:
-    - Question: "Who is the Madonna of Italian-American literature?"
-    - Context: Article text
-- No need of annotated target reference in sentence
+- Idea: Transform annotated VA phrase into QA task
+    - the SOURCE of MODIFIER &rarr; Who is the SOURCE of MODIFIER?
 - Independent on the syntax of VA phrases:
-    - "the German Madonna" &rarr; Who is the German Madonna?
-    - the German [answer to]/[equivalent of]/[version of] Madonna &rarr; Who is the German answer to Madonna?
-    - ...
-- Preliminary Analysis showed that usually, the target name appears before the VA phrase 
-&rarr; cut context after VA phrase appears
+    - the German `(answer to|equivalent of|version of)?` Madonna &rarr; Who is the German `(...)?`  Madonna?
+- Context for extractive QA: article text
+- usually the name of the target entity appears before the VA phrase 
+&rarr; truncate context after VA phrase appears	
+
+
+<br>
+
+<br>
+
+#### Model: Clark et al. 2020 - ELECTRA fine-tuned on SQUAD2.0
+
+--
+
+
+
+## Question-Answering
+
+<br>
+
+<span style="font-style: italic;">TUCKED on a shelf inside a corner cabinet in the living room of Helen Barolini's Carpenter Gothic cottage here sits a crudely shaped tin heart with a tubular sheath for a backing. [. . .] It forms the underpinnings for Ms. Barolini's epic saga ''Umbertina,'' [. . .] ''It is <span style="background-color:orange;">the Madonna of Italian-American literature</span> in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.'' [. . .]</span> 
+
+&darr; <span style="font-size: 0.7em">Transform into QA task</span> &darr;
+
+<!-- <span style="font-style: italic;">Question:Who is the Madonna of Italian-American literature</span> 
+<span style="font-style: italic;">Context: (truncated) article text</span> -->
+
+
+```json
+{
+Question: "Who is the Madonna of Italian-American literature?"
+Context: [truncated] article_text
+}
+```
+
+
+
+
+&darr; <span style="font-size: 0.7em">QA</span> &darr;
+
+<span style="font-style: italic;"><span style="color:green; font-weight:bold">Umbertina</span></span>
+
+
+
+
+
+
+
 
 --
 
 ## Hybrid Approach I
-####  Question Answering
+####  QA + COREF
 
 
 <br>
@@ -285,23 +350,35 @@ https://vossanto.weltliteratur.net/timeline/
 Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed <span style="color: red"> Ms. Valdes</span> last year as ''the Madonna of Cuban literature, with an equal capacity to transform self-assurance and the grotesque into spectacle, to show vulgarity and eroticism stripped of any mystery.''</p>
 
 
+
+- Idea: Combine both approaches
+
+
+
 --
 
-## Hybrid Approach II
-
-#### Coreference Resolution 
+## Hybrid Approach
 
 <br>
 
-1. Find reference chain that includes the QA output
-2. Choose the "best" named entity in the reference chain:
+<span style="font-style: italic;"> 
+[. . .] ''They are always talking about the coarse Zoe Valdes, the crude Zoe Valdes,'' she explained. ''In that way, the Cuban state can discredit me here.'' . [. . .] Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed Ms. Valdes last year as ''the Madonna of Cuban literature, with an equal capacity to transform self-assurance and the grotesque into spectacle, to show vulgarity and eroticism stripped of any mystery.'' [. . .] </span>
 
-   &rarr; longest named entitiy that shares word with QA output (except courtesy titles)
+&darr; <span style="font-size: 0.7em">Question Answering</span> &darr;
 
-[<span style="color:green">Zoe Valdes</span>, <span style="color:green">Zoe Valdes</span>, she, me, <span style="color:red">Ms. Valdes</span>, the Madonna of Cuban literature]
+<span style="font-style: italic;">Ms. Valdes</span>
 
+&darr; <span style="font-size: 0.7em">Coreference resolution & Choose reference chain </span> &darr;
 
+<span style="font-style: italic;">[Zoe Valdes, Zoe Valdes, she, me, Ms. Valdes, the Madonna of Cuban literature]</span>
 
+&darr; <span style="font-size: 0.7em">NER (Akbik et al. 2018)</span> &darr;
+
+<span style="font-style: italic;">[<span style="background-color:LightGreen">Zoe Valdes</span>, <span style="background-color:LightGreen">Zoe Valdes</span>, she, me, <span style="background-color:LightGreen">Ms. Valdes</span>, the <span style="background-color:LightGreen">Madonna</span> of <span style="background-color:LightGreen">Cuban</span> literature]</span>
+
+&darr; <span style="font-size: 0.7em">Select "best" named entity</span> &darr;
+
+<span style="font-style: italic;"><span style="color:green; font-weight:bold">Zoe Valdes</span></span>
 
 --
 
@@ -377,11 +454,11 @@ GENRE (...)
     </tr>
      <tr style="border-bottom:2px solid black">
       <td>ELE<sub>s</sub>+LF</td>
-      <td style="text-align:right; font-weight:bold">.78</td>
-      <td style="text-align:right; font-weight:bold"">.77</td>
-      <td style="text-align:right; font-weight:bold"">.78</td>
-      <td style="text-align:right; font-weight:bold"">.71</td>
-      <td style="text-align:right; font-weight:bold"">.64</td>
+      <td style="text-align:right; font-weight:bold;">.78</td>
+      <td style="text-align:right; font-weight:bold;">.77</td>
+      <td style="text-align:right; font-weight:bold;">.78</td>
+      <td style="text-align:right; font-weight:bold;">.71</td>
+      <td style="text-align:right; font-weight:bold;">.64</td>
     </tr>
   </tbody>
 </table>
@@ -407,4 +484,15 @@ GENRE (...)
 <!-- <small>Paper: <br />doi:[10.5281/zenodo.7715490](https://doi.org/10.5281/zenodo.7715490)</small> -->
  
 
- 
+---
+
+## Bibliography
+
+<br>
+
+- Akbik, Alan ; Blythe, Duncan ; Vollgraf, Roland ; Bender, Emily M. (Bearb.) ; Derczynski, Leon (Bearb.) ; Isabelle, Pierre (Bearb.): Contextual String Embeddings for Sequence Labeling.. In: COLING : Association for Computational Linguistics, 2018. - ISBN 978-1-948087-50-6, S. 1638-1649 
+- Bergien, Angelika: Names as frames in current-day media discourse. In: Proceedings of the second international conference on onomastics. Cluj-Napoca : Editura Mega, 2013, S. 19-27.
+- Clark, Kevin ; Luong, Minh-Thang ; Le, Quoc V. ; Manning, Christopher D.: ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators. In: International Conference on Learning Representations, 2020 
+- Schwab, Michel ; Jäschke, Robert ; Fischer, Frank ; Strötgen, Jannik: »A Buster Keaton of Linguistics« – First Automated Approaches for the Extraction of Vossian Antonomasia. In: Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing : Association for Computational Linguistics, 2019 (EMNLP '19), S. 6239--6244.
+- Schwab, Michel ; Jäschke, Robert ; Fischer, Frank: »The Rodney Dangerfield of Stylistic Devices« – End-to-End Detection and Extraction of Vossian Antonomasia Using Neural Networks. In: Frontiers in Artificial Intelligence , 5 (2022).
+- Toshniwal, Shubham ; Xia, Patrick ; Wiseman, Sam ; Livescu, Karen ; Gimpel, Kevin: On Generalization in Coreference Resolution. In: Proceedings of the Fourth Workshop on Computational Models of Reference, Anaphora and Coreference. Punta Cana, Dominican Republic : Association for Computational Linguistics, 2021, S. 111--120
