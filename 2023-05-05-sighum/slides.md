@@ -159,7 +159,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 --
 
-## Interactive explorable data
+## Interactive explorable data I
 
 <br>
 
@@ -169,15 +169,24 @@ https://vossanto.weltliteratur.net/timeline/
 
 --
 
+## Interactive explorable data II
+
+<br>
+
+![interaktive Vossanto-Timeline](images/modifier.png)<!-- .element width="70%" -->
+
+https://vossanto.weltliteratur.net/dhd2023/modifier.html
+
+--
 
 ## Target Extraction and Linking
 
 <br>
 
-- until now: Vossanto detection using sentences as input
-- Problem: Target not mentioned/only a reference mentioned
-- in this paper: **Extraction and linking of target entity**
-- Web-App for Exploration
+- *Previous approaches*: Vossanto detection and analysis on sentence level
+- *Problem*: Target name not mentioned inside sentence
+- *New in this paper*: **Extraction and linking of target entity**
+- *Application*: Web-App for Exploration
 
 ---
 
@@ -186,34 +195,20 @@ https://vossanto.weltliteratur.net/timeline/
 
 --
 
-
 ## Vossanto Dataset (Schwab et al. (2019, 2022, 2023))
 
 <br>
 
-<ol>
-  <li>
-    regular expression: a/an/the [up to 10 words] of/for/among
-    <ul style="list-style-type: none;">
-      <li>&#8594; candidate sentences </li>
-    </ul>
-  </li>
-  <li>
-    Check with Wikidata list consisting of names and aliases having ›instance-of‹ property ›human‹
-    <ul style="list-style-type: none;">
-      <li>&#8594; Focus on persons </li>
-    </ul>
-  </li>
-  <li>
-     Check with manual currated blacklist
-    <ul style="list-style-type: none;">
-      <li>&#8594; <s>the House of Commons</s> (vgl. <a href="https://www.wikidata.org/wiki/Q3139666">Homer Doliver House</a>)</li>
-    </ul>
-  </li>
-</ol>
+1. <span class="fragment">regular expression: <code>a/an/the [up to 10 words] of/for/among</code>
+    <br> &#8594; candidate sentences</span>
+2. <span class="fragment">Check with Wikidata list consisting of names and aliases having ›instance-of‹ property ›human‹
+    <br> &#8594; Focus on persons</span>
+3. <span class="fragment">Check with manual currated blacklist
+    <br> &#8594; <s>the House of Commons</s> (vgl. <a href="https://www.wikidata.org/wiki/Q3139666">Homer Doliver House</a>)</span>
 
 
-<p style="text-align:left;"> <b>Result</b>: 6,095 sentences, <b>3,115</b> include Vossantos </p>
+<p class="fragment" style="text-align:left;"> <b>Result</b>: 6,095 sentences, <b>3,115</b> include Vossantos </p>
+
 
 
 --
@@ -222,7 +217,18 @@ https://vossanto.weltliteratur.net/timeline/
 
 <br>
 
-![Target Statistics](images/target_stats.png)<!-- .element width="700px" -->
+| target             | count |
+|--------------------|-------|
+| Bill Clinton       |     8 |
+| P. T. Barnum       |     6 |
+| Michael Jordan     |     6 |
+| Will Eno           |     6 |
+| Tiger Woods        |     5 |
+| John McEnroe       |     5 |
+| Benjamin Netanyahu |     5 |
+| James Prosek       |     5 |
+| Frederick Ashton   |     5 |
+| Oscar D'León       |     4 |
 
 ---
 
@@ -262,21 +268,21 @@ https://vossanto.weltliteratur.net/timeline/
  It forms the underpinnings for Ms. Barolini's epic saga ''Umbertina,'' [. . .] ''It is the Madonna of Italian-American literature in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.''
 [. . .] </span></p>
 
-<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Coreference resolution </span> &darr;</span></p>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Coreference resolution </span> &darr;</span>
+<br>
+<span style="font-style: italic;">[Helen Barolini, Ms. Barolini, ...], [Umbertina, It, ...], ... </span></p>
 
-<p class="fragment"><span style="font-style: italic;">[Helen Barolini, Ms. Barolini, ...], [Umbertina, It, ...], ... </span></p>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Choose reference chain </span> &darr;</span>
+<br>
+<span style="font-style: italic;">[Umbertina, It, the Madonna of Italian-American literature, it]</span></p>
 
-<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Choose reference chain </span> &darr;</span></p>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">NER (Akbik et al. 2018)</span> &darr;</span>
+<br>
+<span style="font-style: italic;">[<span style="background-color:rgba(144, 238, 144, 0.5)">Umbertina [PER]</span>, It, the <span style="background-color:rgba(144, 238, 144, 0.5)">Madonna [PER]</span> of <span style="background-color:rgba(144, 238, 144, 0.5)">Italian-American [MISC]</span> literature, it]</span></p>
 
-<p class="fragment"><span style="font-style: italic;">[Umbertina, It, the Madonna of Italian-American literature, it]</span></p>
-
-<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">NER (Akbik et al. 2018)</span> &darr;</span></p>
-
-<p class="fragment"><span style="font-style: italic;">[<span style="background-color:rgba(144, 238, 144, 0.5)">Umbertina [PER]</span>, It, the <span style="background-color:rgba(144, 238, 144, 0.5)">Madonna [PER]</span> of <span style="background-color:rgba(144, 238, 144, 0.5)">Italian-American [MISC]</span> literature, it]</span></p>
-
-<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Select first named entity</span> &darr;</span></p>
-
-<p class="fragment"><span style="font-style: italic;"><span style="color:green; font-weight:bold">Umbertina</span></span></p>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Select first named entity</span> &darr;</span>
+<br>
+<span style="font-style: italic;"><span style="color:green; font-weight:bold">Umbertina</span></span></p>
 
 
 
@@ -313,13 +319,9 @@ https://vossanto.weltliteratur.net/timeline/
 
 <p class="fragment"><span style="font-style: italic;">[. . .] It forms the underpinnings for Ms. Barolini's epic saga ''Umbertina,'' [. . .] ''It is <span style="background-color:rgba(255,165,0,0.5);">the Madonna of Italian-American literature</span> in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.'' [. . .]</span></p>
 
-<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Transform into QA task</span> &darr;</span></p>
-
-<!-- <span style="font-style: italic;">Question:Who is the Madonna of Italian-American literature</span> 
-<span style="font-style: italic;">Context: (truncated) article text</span> -->
-
-
-<p style="font-size:0.9em" class="fragment">
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Transform into QA task</span> &darr;</span>
+<br>
+<span style="font-size:0.9em">
 <code class="json">
 {
 Question: "Who is the Madonna of Italian-American literature?"
@@ -327,14 +329,11 @@ Question: "Who is the Madonna of Italian-American literature?"
 Context: [truncated] article_text
 }
 </code>
-</p>
+</span></p>
 
 
-
-
-<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">QA</span> &darr;</span></p>
-
-<p class="fragment"><span style="font-style: italic;"><span style="color:green; font-weight:bold">Umbertina</span></span></p>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">QA</span> &darr;</span><br>
+<span style="font-style: italic;"><span style="color:green; font-weight:bold">Umbertina</span></span></p>
 
 
 
@@ -370,25 +369,21 @@ Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed <
 <p class="fragment"><span style="font-size: 0.6em; font-style: italic;"> 
 [. . .] ''They are always talking about the coarse Zoe Valdes, the crude Zoe Valdes,'' she explained. ''In that way, the Cuban state can discredit me here.''. [. . .] Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed Ms. Valdes last year as ''the Madonna of Cuban literature, with an equal capacity to transform self-assurance and the grotesque into spectacle, to show vulgarity and eroticism stripped of any mystery.'' [. . .] </span></p>
 
-<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Question Answering</span> &darr;</span></p>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Question Answering</span> &darr;</span>
+<br>
+<span style="font-style: italic;">Ms. Valdes</span></p>
 
-<p class="fragment"><span style="font-style: italic;">Ms. Valdes</span></p>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Coreference resolution & Select reference chain </span> &darr;</span>
+<br>
+<span style="font-style: italic;">[Zoe Valdes, Zoe Valdes, she, me, Ms. Valdes, the Madonna of Cuban literature]</span></p>
 
-<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Coreference resolution & Select reference chain </span> &darr;</span></p>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">NER (Akbik et al. 2018)</span> &darr;</span>
+<br>
+<span style="font-style: italic;">[<span style="background-color:rgba(144, 238, 144, 0.5)">Zoe Valdes [PER]</span>, <span style="background-color:rgba(144, 238, 144, 0.5)">Zoe Valdes [PER]</span>, she, me, <span style="background-color:rgba(144, 238, 144, 0.5)">Ms. Valdes [PER]</span>, the <span style="background-color:rgba(144, 238, 144, 0.5)">Madonna [PER]</span> of <span style="background-color:rgba(144, 238, 144, 0.5)">Cuban [MISC]</span> literature]</span></p>
 
-<p class="fragment"><span style="font-style: italic;">[Zoe Valdes, Zoe Valdes, she, me, Ms. Valdes, the Madonna of Cuban literature]</span></p>
-
-<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">NER (Akbik et al. 2018)</span> &darr;</span></p>
-
-<p class="fragment"><span style="font-style: italic;">[<span style="background-color:rgba(144, 238, 144, 0.5)">Zoe Valdes [PER]</span>, <span style="background-color:rgba(144, 238, 144, 0.5)">Zoe Valdes [PER]</span>, she, me, <span style="background-color:rgba(144, 238, 144, 0.5)">Ms. Valdes [PER]</span>, the <span style="background-color:rgba(144, 238, 144, 0.5)">Madonna [PER]</span> of <span style="background-color:rgba(144, 238, 144, 0.5)">Cuban [MISC]</span> literature]</span></p>
-
-<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Select longest named entity that shares at least one word with QA output </span> &darr;</span></p>
-
-
-
-<p class="fragment"><span style="font-style: italic;"><span style="color:green; font-weight:bold">Zoe Valdes</span></span></p>
-
-
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Select longest named entity that shares at least one word with QA output </span> &darr;</span>
+<br>
+<span style="font-style: italic;"><span style="color:green; font-weight:bold">Zoe Valdes</span></span></p>
 
 
 
