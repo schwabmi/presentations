@@ -24,7 +24,9 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 3. [Task](#/3)
 4. [Data](#/4)
 5. [Methods](#/5)
-6. [Evaluation and Analysis](#/6)
+6. [Evaluation](#/6)
+7. [Findings](#/7)
+8. [Bibliography](#/8)
 
 ---
 
@@ -255,26 +257,26 @@ https://vossanto.weltliteratur.net/timeline/
 
 <br />
 
-<span style="font-style: italic;"> 
+<p class="fragment"><span style="font-style: italic;"> 
 [. . .]
  It forms the underpinnings for Ms. Barolini's epic saga ''Umbertina,'' [. . .] ''It is the Madonna of Italian-American literature in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.''
-[. . .] </span>
+[. . .] </span></p>
 
-<span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Coreference resolution </span> &darr;</span>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Coreference resolution </span> &darr;</span></p>
 
-<span style="font-style: italic;">[Helen Barolini, Ms. Barolini, ...], [Umbertina, It, ...], ... </span>
+<p class="fragment"><span style="font-style: italic;">[Helen Barolini, Ms. Barolini, ...], [Umbertina, It, ...], ... </span></p>
 
-<span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Choose reference chain </span> &darr;</span>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Choose reference chain </span> &darr;</span></p>
 
-<span style="font-style: italic;">[Umbertina, It, the Madonna of Italian-American literature, it]</span>
+<p class="fragment"><span style="font-style: italic;">[Umbertina, It, the Madonna of Italian-American literature, it]</span></p>
 
-<span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">NER (Akbik et al. 2018)</span> &darr;</span>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">NER (Akbik et al. 2018)</span> &darr;</span></p>
 
-<span style="font-style: italic;">[<span style="background-color:rgba(144, 238, 144, 0.5)">Umbertina [PER]</span>, It, the <span style="background-color:rgba(144, 238, 144, 0.5)">Madonna [PER]</span> of <span style="background-color:rgba(144, 238, 144, 0.5)">Italian-American [MISC]</span> literature, it]</span>
+<p class="fragment"><span style="font-style: italic;">[<span style="background-color:rgba(144, 238, 144, 0.5)">Umbertina [PER]</span>, It, the <span style="background-color:rgba(144, 238, 144, 0.5)">Madonna [PER]</span> of <span style="background-color:rgba(144, 238, 144, 0.5)">Italian-American [MISC]</span> literature, it]</span></p>
 
-<span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Select first named entity</span> &darr;</span>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Select first named entity</span> &darr;</span></p>
 
-<span style="font-style: italic;"><span style="color:green; font-weight:bold">Umbertina</span></span>
+<p class="fragment"><span style="font-style: italic;"><span style="color:green; font-weight:bold">Umbertina</span></span></p>
 
 
 
@@ -288,7 +290,8 @@ https://vossanto.weltliteratur.net/timeline/
 - Idea: Transform annotated VA phrase into QA task
     - the SOURCE of MODIFIER &rarr; Who is the SOURCE of MODIFIER?
 - Independent of the syntax of VA phrases:
-    - the German `(answer to|equivalent of|version of)?` Madonna &rarr; Who is the German `(answer to|...)?`  Madonna?
+    - the German `(answer to|equivalent of|version of)?` Madonna <br>
+    &rarr; Who is the German `(answer to|...)?`  Madonna?
 - Context for extractive QA: article text
 - usually the name of the target entity appears before the VA phrase 
 &rarr; truncate context after VA phrase appears	
@@ -308,27 +311,30 @@ https://vossanto.weltliteratur.net/timeline/
 
 <br>
 
-<span style="font-style: italic;">[. . .] It forms the underpinnings for Ms. Barolini's epic saga ''Umbertina,'' [. . .] ''It is <span style="background-color:rgba(255,165,0,0.5);">the Madonna of Italian-American literature</span> in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.'' [. . .]</span> 
+<p class="fragment"><span style="font-style: italic;">[. . .] It forms the underpinnings for Ms. Barolini's epic saga ''Umbertina,'' [. . .] ''It is <span style="background-color:rgba(255,165,0,0.5);">the Madonna of Italian-American literature</span> in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.'' [. . .]</span></p>
 
-<span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Transform into QA task</span> &darr;</span>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Transform into QA task</span> &darr;</span></p>
 
 <!-- <span style="font-style: italic;">Question:Who is the Madonna of Italian-American literature</span> 
 <span style="font-style: italic;">Context: (truncated) article text</span> -->
 
 
-```json
+<p class="fragment">
+<code class="json">
 {
 Question: "Who is the Madonna of Italian-American literature?"
+
 Context: [truncated] article_text
 }
-```
+</code>
+</p>
 
 
 
 
-<span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">QA</span> &darr;</span>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">QA</span> &darr;</span></p>
 
-<span style="font-style: italic;"><span style="color:green; font-weight:bold">Umbertina</span></span>
+<p class="fragment"><span style="font-style: italic;"><span style="color:green; font-weight:bold">Umbertina</span></span></p>
 
 
 
@@ -352,36 +358,35 @@ Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed <
 
 
 
-- Idea: Combine both approaches
-
-
+&rarr; Idea: Combine both approaches
 
 --
+
 
 ## Hybrid Approach - Process
 
 <br>
 
-<span style="font-style: italic;"> 
-[. . .] ''They are always talking about the coarse Zoe Valdes, the crude Zoe Valdes,'' she explained. ''In that way, the Cuban state can discredit me here.'' . [. . .] Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed Ms. Valdes last year as ''the Madonna of Cuban literature, with an equal capacity to transform self-assurance and the grotesque into spectacle, to show vulgarity and eroticism stripped of any mystery.'' [. . .] </span>
+<p class="fragment"><span style="font-size: 0.6em; font-style: italic;"> 
+[. . .] ''They are always talking about the coarse Zoe Valdes, the crude Zoe Valdes,'' she explained. ''In that way, the Cuban state can discredit me here.''. [. . .] Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed Ms. Valdes last year as ''the Madonna of Cuban literature, with an equal capacity to transform self-assurance and the grotesque into spectacle, to show vulgarity and eroticism stripped of any mystery.'' [. . .] </span></p>
 
-<span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Question Answering</span> &darr;</span>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Question Answering</span> &darr;</span></p>
 
-<span style="font-style: italic;">Ms. Valdes</span>
+<p class="fragment"><span style="font-style: italic;">Ms. Valdes</span></p>
 
-<span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Coreference resolution & Select reference chain </span> &darr;</span>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Coreference resolution & Select reference chain </span> &darr;</span></p>
 
-<span style="font-style: italic;">[Zoe Valdes, Zoe Valdes, she, me, Ms. Valdes, the Madonna of Cuban literature]</span>
+<p class="fragment"><span style="font-style: italic;">[Zoe Valdes, Zoe Valdes, she, me, Ms. Valdes, the Madonna of Cuban literature]</span></p>
 
-<span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">NER (Akbik et al. 2018)</span> &darr;</span>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">NER (Akbik et al. 2018)</span> &darr;</span></p>
 
-<span style="font-style: italic;">[<span style="background-color:rgba(144, 238, 144, 0.5)">Zoe Valdes [PER]</span>, <span style="background-color:rgba(144, 238, 144, 0.5)">Zoe Valdes [PER]</span>, she, me, <span style="background-color:rgba(144, 238, 144, 0.5)">Ms. Valdes [PER]</span>, the <span style="background-color:rgba(144, 238, 144, 0.5)">Madonna [PER]</span> of <span style="background-color:rgba(144, 238, 144, 0.5)">Cuban [MISC]</span> literature]</span>
+<p class="fragment"><span style="font-style: italic;">[<span style="background-color:rgba(144, 238, 144, 0.5)">Zoe Valdes [PER]</span>, <span style="background-color:rgba(144, 238, 144, 0.5)">Zoe Valdes [PER]</span>, she, me, <span style="background-color:rgba(144, 238, 144, 0.5)">Ms. Valdes [PER]</span>, the <span style="background-color:rgba(144, 238, 144, 0.5)">Madonna [PER]</span> of <span style="background-color:rgba(144, 238, 144, 0.5)">Cuban [MISC]</span> literature]</span></p>
 
-<span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Select longest named entity that shares at least one word with QA output </span> &darr;</span>
+<p class="fragment"><span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Select longest named entity that shares at least one word with QA output </span> &darr;</span></p>
 
 
 
-<span style="font-style: italic;"><span style="color:green; font-weight:bold">Zoe Valdes</span></span>
+<p class="fragment"><span style="font-style: italic;"><span style="color:green; font-weight:bold">Zoe Valdes</span></span></p>
 
 
 
@@ -477,15 +482,8 @@ Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed <
 </table>
 
 
---
+---
 
-
-## Analysis
-
-
-<br>
-
---
 
 ## Findings
 
@@ -493,8 +491,7 @@ Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed <
 
 [Interactive web demo](https://vossanto.weltliteratur.net/sighum2023/graph.html)
 
-![VA Example](images/va_chain.png)
-<!-- .element width="400px" -->
+![VA Example](images/va_chain.png)<!-- .element width="700px" -->
 
 
 
