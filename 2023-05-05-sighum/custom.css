@@ -23,6 +23,18 @@
 }
 
 
+
+
+  .footnotes {
+    font-size: 0.8em;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+
+
+
+
 /* -------------------- for the timeline --------------------------- */
 
 *,
@@ -226,4 +238,8 @@ body {
     border-radius: 500px 0 0 500px;
   }
 }
+
+
+
+
 
