@@ -256,7 +256,6 @@ https://vossanto.weltliteratur.net/timeline/
 <br />
 
 <span style="font-style: italic;"> 
-TUCKED on a shelf inside a corner cabinet in the living room of Helen Barolini's Carpenter Gothic cottage here sits a crudely shaped tin heart with a tubular sheath for a backing.
 [. . .]
  It forms the underpinnings for Ms. Barolini's epic saga ''Umbertina,'' [. . .] ''It is the Madonna of Italian-American literature in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.''
 [. . .] </span>
@@ -309,7 +308,7 @@ TUCKED on a shelf inside a corner cabinet in the living room of Helen Barolini's
 
 <br>
 
-<span style="font-style: italic;">TUCKED on a shelf inside a corner cabinet in the living room of Helen Barolini's Carpenter Gothic cottage here sits a crudely shaped tin heart with a tubular sheath for a backing. [. . .] It forms the underpinnings for Ms. Barolini's epic saga ''Umbertina,'' [. . .] ''It is <span style="background-color:rgba(255,165,0,0.5);">the Madonna of Italian-American literature</span> in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.'' [. . .]</span> 
+<span style="font-style: italic;">[. . .] It forms the underpinnings for Ms. Barolini's epic saga ''Umbertina,'' [. . .] ''It is <span style="background-color:rgba(255,165,0,0.5);">the Madonna of Italian-American literature</span> in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.'' [. . .]</span> 
 
 <span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Transform into QA task</span> &darr;</span>
 
@@ -376,16 +375,15 @@ Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed <
 
 <span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">NER (Akbik et al. 2018)</span> &darr;</span>
 
-<span style="font-style: italic;">[<span style="background-color:rgba(144, 238, 144, 0.5)">Zoe Valdes</span>, <span style="background-color:rgba(144, 238, 144, 0.5)">Zoe Valdes</span>, she, me, <span style="background-color:rgba(144, 238, 144, 0.5)">Ms. Valdes</span>, the <span style="background-color:rgba(144, 238, 144, 0.5)">Madonna</span> of <span style="background-color:rgba(144, 238, 144, 0.5)">Cuban</span> literature]</span>
+<span style="font-style: italic;">[<span style="background-color:rgba(144, 238, 144, 0.5)">Zoe Valdes [PER]</span>, <span style="background-color:rgba(144, 238, 144, 0.5)">Zoe Valdes [PER]</span>, she, me, <span style="background-color:rgba(144, 238, 144, 0.5)">Ms. Valdes [PER]</span>, the <span style="background-color:rgba(144, 238, 144, 0.5)">Madonna [PER]</span> of <span style="background-color:rgba(144, 238, 144, 0.5)">Cuban [MISC]</span> literature]</span>
 
-<span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Select best[¹] named entity</span> &darr;</span>
+<span style="background-color:rgba(255,204,255,0.5)">&darr; <span style="font-size: 0.7em">Select longest named entity that shares at least one word with QA output </span> &darr;</span>
 
 
 
 <span style="font-style: italic;"><span style="color:green; font-weight:bold">Zoe Valdes</span></span>
 
 
-<p style="font-size:0.6em">[¹]: best:=longest named entity, that shares at least one word with the QA output.</p>
 
 
 
@@ -493,12 +491,13 @@ Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed <
 
 <br>
 
+[Interactive web demo](https://vossanto.weltliteratur.net/sighum2023/graph.html)
 
 ![VA Example](images/va_chain.png)
-<!-- .element width="500px" -->
+<!-- .element width="400px" -->
 
 
-[Interactive web demo](https://vossanto.weltliteratur.net/sighum2023/graph.html)
+
 
 
 
@@ -521,6 +520,8 @@ Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed <
 
 <br>
 
+<div style="font-size: 20px;">
+
 - Akbik, Alan ; Blythe, Duncan ; Vollgraf, Roland ; Bender, Emily M. (Bearb.) ; Derczynski, Leon (Bearb.) ; Isabelle, Pierre (Bearb.): Contextual String Embeddings for Sequence Labeling.. In: COLING : Association for Computational Linguistics, 2018. - ISBN 978-1-948087-50-6, S. 1638-1649 
 - Bergien, Angelika: Names as frames in current-day media discourse. In: Proceedings of the second international conference on onomastics. Cluj-Napoca : Editura Mega, 2013, S. 19-27.
 - Cao, Nicola De ; Izacard, Gautier ; Riedel, Sebastian ; Petroni, Fabio: Autoregressive Entity Retrieval.. In: CoRR, abs/2010.00904 (2020)
@@ -528,3 +529,5 @@ Alejandro Armengol, a critic for El Nuevo Herald, a Miami newspaper, dismissed <
 - Schwab, Michel ; Jäschke, Robert ; Fischer, Frank ; Strötgen, Jannik: »A Buster Keaton of Linguistics« – First Automated Approaches for the Extraction of Vossian Antonomasia. In: Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing : Association for Computational Linguistics, 2019 (EMNLP '19), S. 6239--6244.
 - Schwab, Michel ; Jäschke, Robert ; Fischer, Frank: »The Rodney Dangerfield of Stylistic Devices« – End-to-End Detection and Extraction of Vossian Antonomasia Using Neural Networks. In: Frontiers in Artificial Intelligence , 5 (2022).
 - Toshniwal, Shubham ; Xia, Patrick ; Wiseman, Sam ; Livescu, Karen ; Gimpel, Kevin: On Generalization in Coreference Resolution. In: Proceedings of the Fourth Workshop on Computational Models of Reference, Anaphora and Coreference. Punta Cana, Dominican Republic : Association for Computational Linguistics, 2021, S. 111--120
+
+</div>
