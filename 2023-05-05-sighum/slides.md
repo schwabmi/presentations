@@ -319,11 +319,11 @@ https://vossanto.weltliteratur.net/timeline/
 <span style="font-style: italic;">Context: (truncated) article text</span> -->
 
 
-<p class="fragment">
+<p style="font-size:0.9em" class="fragment">
 <code class="json">
 {
 Question: "Who is the Madonna of Italian-American literature?"
-
+<br>
 Context: [truncated] article_text
 }
 </code>
