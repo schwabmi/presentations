@@ -10,7 +10,7 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 
 <br />URL of this presentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/3UvC1JX](https://bit.ly/3UvC1JX)**  
 
-[SIGHUM2023](https://sighum.wordpress.com/events/latech-clfl-2023/) &nbsp;·&nbsp; Dubrovnik &nbsp;🇭🇷 &nbsp;·&nbsp; Fr, 05. Mai 2023
+[SIGHUM2023](https://sighum.wordpress.com/events/latech-clfl-2023/) &nbsp;·&nbsp; Dubrovnik &nbsp;🇭🇷 &nbsp;·&nbsp; Fri, 5 May 2023
 <!-- .element: style="font-size:0.8em;" -->
 
 ---
@@ -19,13 +19,13 @@ Michel Schwab ¹ <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 
 
 <br>
 
-1. [Definition and Examples](#/1)
-2. [Task](#/2)
-3. [Data](#/3)
-4. [Methods](#/4)
-5. [Evaluation](#/5)
-6. [Findings](#/6)
-7. [Bibliography](#/7)
+1. [Definition and Examples](#/2)
+2. [Task](#/3)
+3. [Data](#/4)
+4. [Methods](#/5)
+5. [Evaluation](#/6)
+6. [Findings](#/7)
+7. [Bibliography](#/8)
 
 ---
 
@@ -71,7 +71,7 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 <br />
 
-= Jim Koch (Quelle: [theatlantic.com](https://www.theatlantic.com/magazine/archive/2014/11/the-steve-jobs-of-beer/380790/), 2014)
+= Jim Koch (Source: [theatlantic.com](https://www.theatlantic.com/magazine/archive/2014/11/the-steve-jobs-of-beer/380790/), 2014)
 
 ---
 
@@ -183,7 +183,7 @@ https://vossanto.weltliteratur.net/dhd2023/modifier.html
 <br>
 
 - *Previous approaches*: Vossanto detection and analysis on sentence level
-- *Problem*: Target name not mentioned inside sentence
+- *Problem*: Target name not mentioned in the sentence
 - *New in this paper*: **Extraction and linking of target entity**
 - *Application*: Web-App for Exploration
 
