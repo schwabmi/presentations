@@ -240,7 +240,7 @@ https://vossanto.weltliteratur.net/dhd2023/modifier.html
 
 <br />
 
-#### 1. Baseline: Reference chain VA phrase
+#### 1. Baseline: Reference chain that includes VA phrase
 
 
 <p style="font-size: 0.7em; font-style: italic;">''It is <span style="background-color: rgba(255,165,0,0.5); font-weight:bold">the Madonna of Italian-American literature</span> in that it shows the transition from the Italian immigrant to American citizen like no other book of its genre.''</p>
