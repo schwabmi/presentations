@@ -1,0 +1,195 @@
+### Automatic Detection, Extraction and Analysis of the stylistic device Vossian Antonomasia
+
+
+Michel Schwab <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 src="https://upload.wikimedia.org/wikipedia/commons/0/06/ORCID_iD.svg"/></a> 
+
+Humboldt-Universität zu Berlin <br />
+
+<br />URL of this presentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/3UvC1JX](https://bit.ly/3UvC1JX)**  
+
+[IBI PHD Colloquium] &nbsp;·&nbsp; Berlin &nbsp; 🇩🇪 &nbsp;·&nbsp; Fri, 30 June 2023
+<!-- .element: style="font-size:0.8em;" -->
+
+---
+
+## Content
+
+<br>
+
+1. [Definition and Examples](#/2)
+2. [Task](#/3)
+4. [Chapters](#/4)
+6. [Findings](#/7)
+7. [Bibliography](#/8)
+
+---
+
+# Definition and Examples
+
+--
+
+## Vossian Antonomasia (Vossanto)
+
+<br />
+
+<!--[portrait of Gerhard Johannes Vossius; source: Wikimedia Commons](images/vossius.jpg)
+ .element width="100px" --> 
+
+- a trope, closely related to metaphor and metonymy
+- special case of general antonomasia
+- attributing a particular property to an entity by naming another named entity, that is typically well-known for the respective property
+- first described around 1600 by Gerardus Vossius
+- consists of Target, Source, Modifier (cf. Bergien 2013)
+
+
+--
+
+## »the Michael Jordan of football«
+
+<br>
+
+![VA Example](images/example.png)
+<!-- .element width="450px" -->
+
+
+<small>
+image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a></small>
+
+--
+
+
+## Examples
+
+<br />
+
+![Jim Koch, the Steve Jobs of beer](images/the-steve-jobs-of-beer_theatlantic-com.jpg)<!-- .element height="400px" --> 
+
+<br />
+
+= Jim Koch (Source: [theatlantic.com](https://www.theatlantic.com/magazine/archive/2014/11/the-steve-jobs-of-beer/380790/), 2014)
+
+---
+
+## Summary
+
+--
+
+### PhD Progress
+
+<br />
+
+![PhD Timeline](images/timeline.png)<!-- .element width="90%" -->
+
+
+
+--
+
+### "A Buster Keaton of Linguistics": First Automated Approaches for the Extraction of Vossian Antonomasia.
+
+<br />
+
+![Paper connections](images/paper_1.png)<!-- .element width="90%" -->
+
+
+--
+
+### "A Buster Keaton of Linguistics": First Automated Approaches for the Extraction of Vossian Antonomasia.
+
+<br />
+
+
+--
+
+### "The Rodney Dangerfield of Stylistic Devices": End-to-End Detection and Extraction of Vossian Antonomasia Using Neural Networks.
+
+<br />
+
+![Paper connections](images/paper_2.png)<!-- .element width="90%" -->
+
+
+--
+
+### "The Rodney Dangerfield of Stylistic Devices": End-to-End Detection and Extraction of Vossian Antonomasia Using Neural Networks.
+
+<br />
+
+--
+
+### "Der Frank Sinatra der Wettervorhersage": Cross-Lingual Vossian Antonomasia Extraction. 
+
+<br />
+
+![Paper connections](images/paper_3.png)<!-- .element width="90%" -->
+
+
+--
+
+### "Der Frank Sinatra der Wettervorhersage": Cross-Lingual Vossian Antonomasia Extraction. 
+
+<br />
+
+--
+
+### »Die Greta Garbo der Leichtathletik« - Eine systematische Analyse der Modifier vossianischer Antonomasien mithilfe von Word Embeddings. 
+
+<br />
+
+![Paper connections](images/paper_4.png)<!-- .element width="80%" -->
+
+
+--
+
+### »Die Greta Garbo der Leichtathletik« - Eine systematische Analyse der Modifier vossianischer Antonomasien mithilfe von Word Embeddings.
+
+<br />
+
+
+--
+
+### »Who is the Madonna of Italian-American Literature?« - Extracting and Analyzing Target Entities of Vossian Antonomasia
+
+<br />
+
+![Paper connections](images/paper_5.png)<!-- .element width="90%" -->
+
+
+--
+
+### »Who is the Madonna of Italian-American Literature?« - Extracting and Analyzing Target Entities of Vossian Antonomasia
+
+<br />
+
+--
+
+### EMNLP 2023
+
+<br />
+
+![Paper connections](images/paper_6.png)<!-- .element width="90%" -->
+
+
+--
+
+### EMNLP 2023
+
+<br />
+
+
+
+---
+
+## Bibliography
+
+<br>
+
+<div style="font-size: 20px;">
+
+- Akbik, Alan ; Blythe, Duncan ; Vollgraf, Roland ; Bender, Emily M. (Bearb.) ; Derczynski, Leon (Bearb.) ; Isabelle, Pierre (Bearb.): Contextual String Embeddings for Sequence Labeling.. In: COLING : Association for Computational Linguistics, 2018. - ISBN 978-1-948087-50-6, S. 1638-1649 
+- Bergien, Angelika: Names as frames in current-day media discourse. In: Proceedings of the second international conference on onomastics. Cluj-Napoca : Editura Mega, 2013, S. 19-27.
+- Cao, Nicola De ; Izacard, Gautier ; Riedel, Sebastian ; Petroni, Fabio: Autoregressive Entity Retrieval.. In: CoRR, abs/2010.00904 (2020)
+- Clark, Kevin ; Luong, Minh-Thang ; Le, Quoc V. ; Manning, Christopher D.: ELECTRA: Pre-training Text Encoders as Discriminators Rather Than Generators. In: International Conference on Learning Representations, 2020 
+- Schwab, Michel ; Jäschke, Robert ; Fischer, Frank ; Strötgen, Jannik: »A Buster Keaton of Linguistics« – First Automated Approaches for the Extraction of Vossian Antonomasia. In: Proceedings of the 2019 Conference on Empirical Methods in Natural Language Processing and the 9th International Joint Conference on Natural Language Processing : Association for Computational Linguistics, 2019 (EMNLP '19), S. 6239--6244.
+- Schwab, Michel ; Jäschke, Robert ; Fischer, Frank: »The Rodney Dangerfield of Stylistic Devices« – End-to-End Detection and Extraction of Vossian Antonomasia Using Neural Networks. In: Frontiers in Artificial Intelligence , 5 (2022).
+- Toshniwal, Shubham ; Xia, Patrick ; Wiseman, Sam ; Livescu, Karen ; Gimpel, Kevin: On Generalization in Coreference Resolution. In: Proceedings of the Fourth Workshop on Computational Models of Reference, Anaphora and Coreference. Punta Cana, Dominican Republic : Association for Computational Linguistics, 2021, S. 111--120
+
+</div>
