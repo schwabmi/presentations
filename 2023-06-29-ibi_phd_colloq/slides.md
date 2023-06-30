@@ -5,7 +5,7 @@ Michel Schwab <a href="https://orcid.org/0000-0001-5569-6568"><img height=20 src
 
 Humboldt-Universität zu Berlin <br />
 
-<br />URL of this presentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/3UvC1JX](https://bit.ly/3UvC1JX)**  
+<br />URL of this presentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/ibi_phd_colloq](https://bit.ly/ibi_phd_colloq)**  
 
 IBI PhD Colloquium &nbsp;·&nbsp; Berlin &nbsp; 🇩🇪 &nbsp;·&nbsp; Fri, 30 June 2023
 <!-- .element: style="font-size:0.8em;" -->
