@@ -7,7 +7,7 @@ Humboldt-Universität zu Berlin <br />
 
 <br />URL of this presentation: <!-- .element: style="font-size:0.6em;" --> **[bit.ly/3UvC1JX](https://bit.ly/3UvC1JX)**  
 
-[IBI PHD Colloquium] &nbsp;·&nbsp; Berlin &nbsp; 🇩🇪 &nbsp;·&nbsp; Fri, 30 June 2023
+IBI PhD Colloquium &nbsp;·&nbsp; Berlin &nbsp; 🇩🇪 &nbsp;·&nbsp; Fri, 30 June 2023
 <!-- .element: style="font-size:0.8em;" -->
 
 ---
@@ -16,13 +16,27 @@ Humboldt-Universität zu Berlin <br />
 
 <br>
 
-1. [Definition and Examples](#/2)
-2. [Summary](#/3)
-3. [Chapters](#/4)
-3. [Findings](#/5)
+
+1. [PhD Progress](#/1)
+2. [VA Definition and Examples](#/2)
+3. [Motivation](#/3)
+4. [Chapters](#/4)
+5. [Findings](#/5)
 
 
 ---
+
+
+## PhD Progress
+
+<br />
+
+![PhD Timeline](images/timeline.png)<!-- .element width="80%" -->
+
+
+
+---
+
 
 # Definition and Examples
 
@@ -70,15 +84,17 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 ---
 
-## Summary
-
---
-
-### PhD Progress
+## Motivation
 
 <br />
 
-![PhD Timeline](images/timeline.png)<!-- .element width="80%" -->
+- Challenging task because of syntactic ambiguity:
+    - the Michelangelo of the Sistine Chapel vs. the Michelangelo of Manhattan
+    - the George W. Bush of 2016
+- supports various NLP tasks like Coreference Resolution
+- creates interesting new dataset for robustness studies, e.g. in Question-Answering
+- support creative natural language generation
+- the association of properties and characteristics to entities
 
 
 
@@ -101,13 +117,17 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 <br />
 
-1. Semi-automated approach to create a labeled Dataset
-    - Labeled Dataset: 3,000 pos. Instances, 3000 neg. Instances
-2. First Automated Approach using a "popularity measure"
-    - Introduce "popularity measure"
+- Datset creation (based on 20years NYT articles, ~1.8mio):
+  1. Regex: a/an/the [up to 5 words] for/of/among
+  2. Wikidata "human" list (labels + aliases)
+  3. manual curated blacklist
+  4. manual annotations vs. crowd sourcing
 
-3. Second Automated Approach using Neural Networks
-    - Bidirectional Long-Short Term Memory (binary classifier)
+    &rarr; Labeled Dataset: 6,072 sentence of which 3,023 include VA expressions)
+- Methods (automated):
+   - Introduction of "popularity measure"
+   - Alternative to Wikidata: NER tagger
+   - Neural Network (Bidirectional Long-Short Term Memory) + Linear layer (binary classification)
 
 
 --
@@ -126,15 +146,18 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 <br />
 
-1. Binary classification
-   - BLSTM combined with Attention Layer
-   - fine-tuned BERT
+- Annotate labeled Dataset on word-level (IOB tagging)
 
-2. Sequence Tagging
+- Binary classification
+   - BLSTM combined with Attention Layer
+   - fine-tuned BERT (LLM)
+
+-  Sequence Tagging
    - BLSTM-CRF
    - fine-tuned BERT
 
-3. Robustness Studies
+- Robustness Studies
+    - sample-based approaches on unseen data
 
 
 --
@@ -152,14 +175,14 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 <br />
 
-1. Zero-Shot Cross Lingual Transfer
-    - fine-tune Multilingual Language Model (XLM-RoBERTa)
-
-2. Machine Translation and Alignment of Training Data
-    - fine-tune mBERT
-
-3. Machine Translation and Alignment of Test Data
-    - fine-tune "german BERT"
+- (German) Dataset creation:
+   - manual collected VA list
+   - semi-automated approach from Jäschke et al. 2017
+   - generation of negative test data
+- Methods:
+    - Zero-Shot Cross Lingual Transfer Learning: XLM-RoBERTa
+    - Machine Translation and Alignment of Test Data: mBERT
+    - Machine Translation and Alignment of Training Data: "german BERT"
 
 --
 
@@ -176,8 +199,11 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 <br />
 
-
-
+- Methods:
+   1. Sentence-BERT (efficient Computing of semantic similarity)
+   2. Clustering (k-means)
+   3. Topic assignment for clusters (WordNet Domains)
+   4. [interactive Visualization (Reduction algorithms (PCA, t-SNE, etc.))](https://vossanto.weltliteratur.net/dhd2023/modifier.html)
 
 --
 
@@ -194,12 +220,14 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 <br />
 
-1. Coreference Resolution
+- Dataset creation:
+   - Annotating target entity in corresponding article
+- Methods:
+    - Coreference Resolution (reference chain)
+    - Question-Answering (transforming VA into Question)
+    - Hybrid model (Coref + QA)
 
-2. Question-Answering
-
-3. Hybrid Model
-
+- [interactive visualization](https://vossanto.weltliteratur.net/sighum2023/graph.html)
 
 
 --
@@ -217,20 +245,22 @@ image sources: <a href="https://commons.wikimedia.org/wiki">Wikimedia Commons</a
 
 <br />
 
-1. Data Augmentation
-    - the Michael Jordan of Germany vs. the German Michael Jordan
+- Dataset:
+   - Data augmentation: the <span style="color:red">MJ</span> of <span style="color:blue">Germany</span>
+   
+   &rarr; <span style="color:blue">[the German|Germany's]</span> [answer to|version of| equivalent of] <span style="color:red">MJ</span>
 
-2. Focus on Source and model problem for different scenarios
-
+- Focus on Generalizability
+    - adapt linguistic metaphor theories (MIP, SPV) 
+    - model as sentence pair (source, sentence)
+    - introduce special characters
+  
 
 
 ---
 
 ## Findings
-
---
-
-## 
+ <br /> 
 
 - create annotated VA dataset
 - first fully automated approaches to detect VA
