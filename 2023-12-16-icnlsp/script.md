@@ -50,8 +50,9 @@ Data and Code are available at our <a href="https://vossanto.weltliteratur.net/"
 
 1. [Defintion and Examples](#/1)
 2. [Motivation and Difficulty](#/2)
-3. [Data and Methods](#/3)
-4. [Evaluation and Analysis](#/4)
+3. [Data](#/3)
+4. [Methods](#/4)
+5. [Evaluation](#/5)
 
 
 ---
