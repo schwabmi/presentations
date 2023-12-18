@@ -207,7 +207,7 @@ Interdisziplinarität in Geisteswissenschaften: Linguistische, kognitive, kultur
 
 ## Übersicht 
 
-![Paper connections](images/paper_all.png)<!-- .element width="60%" -->
+![Paper connections](images/paper_all.png)<!-- .element width="50%" -->
 
 
 
@@ -218,7 +218,7 @@ Interdisziplinarität in Geisteswissenschaften: Linguistische, kognitive, kultur
 
 <br />
 
-![Paper connections](images/paper_1.png)<!-- .element width="60%" -->
+![Paper connections](images/paper_1.png)<!-- .element width="50%" -->
 
 
 --
@@ -292,7 +292,7 @@ F<sub>1</sub>: 0.76
 
 <br />
 
-![Paper connections](images/paper_2.png)<!-- .element width="60%" -->
+![Paper connections](images/paper_2.png)<!-- .element width="50%" -->
 
 
 
@@ -424,7 +424,7 @@ Modell: BERT-SEQ
 
 <br />
 
-![Paper connections](images/paper_3.png)<!-- .element width="60%" -->
+![Paper connections](images/paper_3.png)<!-- .element width="50%" -->
 
 
 --
@@ -523,7 +523,7 @@ Daten von Jäschke et al. 2017: regelbasierter Ansatz
 
 <br />
 
-![Paper connections](images/paper_4.png)<!-- .element width="60%" -->
+![Paper connections](images/paper_4.png)<!-- .element width="50%" -->
 
 
 --
@@ -650,7 +650,7 @@ NER für Kandidatengenerierung
 
 <br />
 
-![Paper connections](images/paper_5.png)<!-- .element width="60%" -->
+![Paper connections](images/paper_5.png)<!-- .element width="50%" -->
 
 --
 
@@ -743,7 +743,7 @@ Datensatz: annotierter Datensatz aus Schwab et al., 2022.
 
 <br />
 
-![Paper connections](images/paper_6.png)<!-- .element width="60%" -->
+![Paper connections](images/paper_6.png)<!-- .element width="50%" -->
 
 --
 
